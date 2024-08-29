@@ -1,0 +1,22 @@
+name: workflow-aula
+on: push
+
+jobs:
+  JobLinux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Etapa 01
+        uses: actions/checkout@v4
+
+      - name: Etapa 02
+        run: |
+          cat README.md
+          uname -a
+
+  JobWindows:
+    runs-on: windows-latest
+    steps:
+      - name: Identify kernel version
+        run: |
+          uname -a
+          Get-ComputerInfo | select WindowsProductName, WindowsVersion, OsHardwareAbstractionLayer
