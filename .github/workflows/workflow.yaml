@@ -16,7 +16,7 @@ jobs:
   JobWindows:
     runs-on: windows-latest
     steps:
-      - name: Identify kernel version
+      - name: Identify Windows Version
         run: |
           uname -a
           Get-ComputerInfo | select WindowsProductName, WindowsVersion, OsHardwareAbstractionLayer
